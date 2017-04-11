@@ -142,6 +142,18 @@ It supports accurate phrase and multi-term (fuzzy, prefix, regex) highlighting a
 * `pre_tags and `post_tags`
 * `require_field_match`
 
+To allow the unified highlighter to select between all the highlighters, set the options for the postings and fvn highlighter combined.
+
+[source,js]
+--------------------------------------------------
+{
+    "type_name" : {
+        "content" : {"term_vector" : "with_positions_offsets",
+                      "index_options" : "offsets"}
+    }
+}
+
+
 ==== Force highlighter type
 
 The `type` field allows to force a specific highlighter type. This is useful
